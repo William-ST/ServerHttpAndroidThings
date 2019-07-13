@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Webserver para control remoto del LED</title>
+    <style type="text/css">
+*{
+font-family: arial; color: white;
+} body {
+          background: #colorA;
+          background: -webkit-linear-gradient(to right, #colorA, #colorB);
+          background: linear-gradient(to right, #colorA, #colorB);
+} .btn {
+          border: none;
+          color: white;
+          padding: 14px 28px;
+          cursor: pointer;
+        }
+        .on {background-color: #2196F3;}
+        .on:hover {background: #0b7dda;}
+        .off {background-color: #e7e7e7; color: black;}
+        .off:hover {background: #ddd;}
+
+    </style>
+    <script type="text/javascript">
+          var newloaction = "";
+          function setON() {
+            window.location = '?on=true';
+          }
+          function setOFF() {
+            window.location = '?off=true';
+          }
+          function refreshValue() {
+            window.location = '?refreshvalue=true';
+          }
+    </script>
+</head>
+<body align="center" style="background-color: #000000;">
+<h1><br><br>Control remoto de LED<br></h1>
+Estado actual:
+<strong>
+    <small><span style="color:#keycolor;">#keytext</span></small>
+</strong><br><br>Lanzar acción<br><br>
+<button class="btn on" onclick="setON();">ON</button>
+<button class="btn off" onclick="setOFF();">OFF</button>
+<h1><br><br>Lectura remota del fotoresistor<br></h1>
+Valor actual:
+<strong>
+    <small><span style="color:#00FF00;">#fotoresistor</span></small>
+</strong>
+</strong><br><br>Lanzar acción<br><br>
+<button class="btn on" onclick="refreshValue();">Actualizar valor</button>
+</body>
+</html>
